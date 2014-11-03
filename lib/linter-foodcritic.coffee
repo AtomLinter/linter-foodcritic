@@ -15,8 +15,7 @@ class LinterFoodcritic extends Linter
   linterName: 'foodcritic'
 
   # A regex pattern used to extract information from the executable's output.
-  regex:
-    '(?<message>.+:\\s.+):\\s.+?(?<filepath>.+):(?<line>\\d+)'
+  regex: null  # check getCmdAndArgs function
 
   constructor: (editor)->
     super(editor)
