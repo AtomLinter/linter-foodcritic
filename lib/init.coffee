@@ -1,6 +1,7 @@
 module.exports =
   configDefaults:
-    rubocopExecutablePath: null
+    foodcriticExecutablePath: null
+    foodcriticExtraArgs: ""
 
   activate: ->
-    console.log 'activate linter-rubocop'
+    console.log 'activate linter-foodcritic'

@@ -1,11 +1,11 @@
 {
-  "name": "linter-rubocop",
+  "name": "linter-foodcritic",
   "linter-package": true,
   "activationEvents": [],
   "main": "./lib/init",
-  "version": "0.2.1",
-  "description": "Lint `Ruby` on the fly, using rubocop",
-  "repository": "https://github.com/AtomLinter/linter-rubocop",
+  "version": "0.0.1",
+  "description": "Lint `Foodcritic` on the fly, using foodcritic",
+  "repository": "https://github.com/jarig/atomlinter-foodcritic.git",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
