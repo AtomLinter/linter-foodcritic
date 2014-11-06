@@ -19,6 +19,7 @@ Before using this plugin, you must ensure that `foodcritic` is installed on your
    ```
    https://downloads.getchef.com/chef-dk/
    ```
+
 Now you can proceed to install the linter-foodcritic plugin.
 
 ### Plugin installation
