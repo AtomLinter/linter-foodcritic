@@ -15,9 +15,10 @@ Before using this plugin, you must ensure that `foodcritic` is installed on your
    ```
    gem install foodcritic
    ```
-1. Alternatively install ChefDK which already includes foodcritic:
-https://downloads.getchef.com/chef-dk/
-
+3. Alternatively install ChefDK which already includes foodcritic:
+   ```
+   https://downloads.getchef.com/chef-dk/
+   ```
 Now you can proceed to install the linter-foodcritic plugin.
 
 ### Plugin installation
@@ -36,9 +37,10 @@ You can configure linter-foodcritic by editing ~/.atom/config.cson (choose Open 
 Run `which foodcritic` to find the path
 
 #### foodcriticExtraArgs
+```
 'linter-foodcritic':
   'foodcriticExtraArgs': "" # additional arguments to foodcritic
-
+```
 
 ## Contributing
 If you would like to contribute enhancements or fixes, please do the following:
