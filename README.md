@@ -1,7 +1,7 @@
 linter-foodcritic
 =========================
 
-This linter plugin for [Linter](https://github.com/AtomLinter/Linter) provides an interface to [foodcritic](https://github.com/bbatsov/rubocop). It will be used with files that have the “Ruby” syntax.
+This linter plugin for [Linter](https://github.com/AtomLinter/Linter) provides an interface to [foodcritic](https://github.com/AtomLinter/linter-foodcritic). It will be used with files that have the “Ruby” syntax.
 
 ## Installation
 Linter package must be installed in order to use this plugin. If Linter is not installed, please follow the instructions [here](https://github.com/AtomLinter/Linter).
@@ -11,27 +11,34 @@ Before using this plugin, you must ensure that `foodcritic` is installed on your
 
 1. Install [ruby](https://www.ruby-lang.org/).
 
-2. Install [rubocop](https://github.com/bbatsov/rubocop) by typing the following in a terminal:
+2. Install [foodcritic](http://acrmp.github.io/foodcritic/) by typing the following in a terminal:
    ```
-   gem install rubocop
+   gem install foodcritic
    ```
+1. Alternatively install ChefDK which already includes foodcritic:
+https://downloads.getchef.com/chef-dk/
 
-Now you can proceed to install the linter-rubocop plugin.
+Now you can proceed to install the linter-foodcritic plugin.
 
 ### Plugin installation
 ```
-$ apm install linter-rubocop
+$ apm install linter-foodcritic
 ```
 
 ## Settings
 You can configure linter-foodcritic by editing ~/.atom/config.cson (choose Open Your Config in Atom menu):
 
-#### rubocopExecutablePath
+#### foodcriticExecutablePath
 ```
 'linter-foodcritic':
-  'foodcriticExecutablePath': null # rubocop path.
+  'foodcriticExecutablePath': null # foodcritic path.
 ```
-Run `which foodcritic` to find the path,
+Run `which foodcritic` to find the path
+
+#### foodcriticExtraArgs
+'linter-foodcritic':
+  'foodcriticExtraArgs': "" # additional arguments to foodcritic
+
 
 ## Contributing
 If you would like to contribute enhancements or fixes, please do the following:
