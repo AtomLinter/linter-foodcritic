@@ -5,7 +5,7 @@
   "main": "./lib/init",
   "version": "0.1.0",
   "description": "Lint `Foodcritic` on the fly, using foodcritic",
-  "repository": "https://github.com/jarig/atomlinter-foodcritic.git",
+  "repository": "https://github.com/AtomLinter/linter-foodcritic.git",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
