@@ -1,6 +1,6 @@
 module.exports =
   configDefaults:
-    foodcriticExecutablePath: null
+    foodcriticExecutablePath: ''
     foodcriticExtraArgs: ""
 
   activate: ->
