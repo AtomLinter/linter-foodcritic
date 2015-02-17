@@ -10,7 +10,7 @@ class LinterFoodcritic extends Linter
 
   # A string, list, tuple or callable that returns a string, list or tuple,
   # containing the command line (with arguments) used to lint.
-  cmd: 'foodcritic'
+  cmd: ['foodcritic']
 
   linterName: 'foodcritic'
 
@@ -24,20 +24,18 @@ class LinterFoodcritic extends Linter
       @executablePath = atom.config.get 'linter-foodcritic.foodcriticExecutablePath'
 
     extraArgs = ""
-    atom.config.observe 'linter-foodcritic.foodcriticExtraArgs', ->
+    atom.config.observe 'linter-foodcritic.foodcriticExtraArgs', =>
       extraArgs = atom.config.get 'linter-foodcritic.foodcriticExtraArgs'
-    @cmd += " #{extraArgs}"
+      @cmd.push extraArgs if extraArgs
 
   getCmdAndArgs: (filePath) ->
     # find metadata.rb recursively in parent folders
     filePath = atom.workspace.getActiveTextEditor().getPath()
-    console.log('Filepath:' + filePath)
     fileDir = pathModule.dirname(filePath)
     @cwd = pathModule.dirname(findFile(fileDir, 'metadata.rb'))
     # change filePath to be relative to @cwd
     filePath = filePath.replace(@cwd, '').replace(/\\/g, '/').replace(/^\//, '')
     @regex = "(?<message>.+:\\s.+):\\s+(./)?(?:#{filePath}|[\\w+\\._]+):(?<line>\\d+)"
-    console.log('CWD: ' + @cwd)
     super(filePath)
 
   destroy: ->
