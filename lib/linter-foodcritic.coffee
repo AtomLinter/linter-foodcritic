@@ -20,7 +20,7 @@ class LinterFoodcritic extends Linter
   constructor: (editor)->
     super(editor)
 
-    @pathSubscription = atom.config.observe 'linter-foodcritic.foodcriticExecutablePath', ->
+    @pathSubscription = atom.config.observe 'linter-foodcritic.foodcriticExecutablePath', =>
       @executablePath = atom.config.get 'linter-foodcritic.foodcriticExecutablePath'
 
     extraArgs = ""
