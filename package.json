@@ -1,7 +1,6 @@
 {
   "name": "linter-foodcritic",
   "linter-package": true,
-  "activationEvents": [],
   "main": "./lib/init",
   "version": "0.3.7",
   "description": "Lint `Foodcritic` on the fly, using foodcritic",
