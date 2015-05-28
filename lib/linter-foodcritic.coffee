@@ -20,11 +20,11 @@ class LinterFoodcritic extends Linter
   constructor: (editor)->
     super(editor)
 
-    atom.config.observe 'linter-foodcritic.foodcriticExecutablePath', ->
+    @pathSubscription = atom.config.observe 'linter-foodcritic.foodcriticExecutablePath', ->
       @executablePath = atom.config.get 'linter-foodcritic.foodcriticExecutablePath'
 
     extraArgs = ""
-    atom.config.observe 'linter-foodcritic.foodcriticExtraArgs', =>
+    @argsSubscription = atom.config.observe 'linter-foodcritic.foodcriticExtraArgs', =>
       extraArgs = atom.config.get 'linter-foodcritic.foodcriticExtraArgs'
       @cmd.push extraArgs if extraArgs
 
@@ -39,6 +39,8 @@ class LinterFoodcritic extends Linter
     super(filePath)
 
   destroy: ->
-    atom.config.unobserve 'linter-foodcritic.foodcriticExecutablePath'
+    super
+    @pathSubscription.dispose()
+    @argsSubscription.dispose()
 
 module.exports = LinterFoodcritic
