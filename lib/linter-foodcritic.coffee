@@ -30,11 +30,14 @@ class LinterFoodcritic extends Linter
 
   getCmdAndArgs: (filePath) ->
     # find metadata.rb recursively in parent folders
-    filePath = atom.workspace.getActiveTextEditor().getPath()
-    fileDir = pathModule.dirname(filePath)
-    @cwd = pathModule.dirname(findFile(fileDir, 'metadata.rb'))
-    # change filePath to be relative to @cwd
-    filePath = filePath.replace(@cwd, '').replace(/\\/g, '/').replace(/^\//, '')
+    editor = atom.workspace.getActiveTextEditor()
+    if editor?
+      filePath = editor.getPath()
+      fileDir = pathModule.dirname(filePath)
+      @cwd = pathModule.dirname(findFile(fileDir, 'metadata.rb'))
+      # change filePath to be relative to @cwd
+      filePath = filePath.replace(@cwd, '').replace(/\\/g, '/').replace(/^\//, '')
+
     @regex = "(?<message>.+:\\s.+):\\s+(./)?(?:#{filePath}|[\\w+\\._]+):(?<line>\\d+)"
     super(filePath)
 
