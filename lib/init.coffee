@@ -2,7 +2,7 @@ module.exports =
   config:
     foodcriticExecutablePath:
       type: 'string'
-      default: ''
+      default: 'foodcritic'
     foodcriticExtraArgs:
       type: 'string'
       default: ''

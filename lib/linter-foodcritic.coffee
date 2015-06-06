@@ -6,27 +6,26 @@ pathModule = require 'path'
 class LinterFoodcritic extends Linter
   # The syntax that the linter handles. May be a string or
   # list/tuple of strings. Names should be all lowercase.
-  @syntax: ['source.ruby']
+  @syntax: ['source.ruby.chef']
 
   # A string, list, tuple or callable that returns a string, list or tuple,
   # containing the command line (with arguments) used to lint.
-  cmd: ['foodcritic']
+  cmd: null
 
   linterName: 'foodcritic'
 
   # A regex pattern used to extract information from the executable's output.
   regex: null  # check getCmdAndArgs function
 
+
   constructor: (editor)->
     super(editor)
-
     @pathSubscription = atom.config.observe 'linter-foodcritic.foodcriticExecutablePath', =>
       @executablePath = atom.config.get 'linter-foodcritic.foodcriticExecutablePath'
 
-    extraArgs = ""
+    @extraArgs = ""
     @argsSubscription = atom.config.observe 'linter-foodcritic.foodcriticExtraArgs', =>
-      extraArgs = atom.config.get 'linter-foodcritic.foodcriticExtraArgs'
-      @cmd.push extraArgs if extraArgs
+      @extraArgs = atom.config.get 'linter-foodcritic.foodcriticExtraArgs'
 
   getCmdAndArgs: (filePath) ->
     # find metadata.rb recursively in parent folders
@@ -39,7 +38,11 @@ class LinterFoodcritic extends Linter
       filePath = filePath.replace(@cwd, '').replace(/\\/g, '/').replace(/^\//, '')
 
     @regex = "(?<message>.+:\\s.+):\\s+(./)?(?:#{filePath}|[\\w+\\._]+):(?<line>\\d+)"
-    super(filePath)
+
+    {
+      command: @executablePath,
+      args: @extraArgs.split(' ').concat [filePath]
+    }
 
   destroy: ->
     super
