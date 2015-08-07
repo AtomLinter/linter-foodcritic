@@ -33,14 +33,14 @@ You can configure linter-foodcritic by editing ~/.atom/config.cson (choose Open 
 #### foodcriticExecutablePath
 ```
 'linter-foodcritic':
-  'foodcriticExecutablePath': null # foodcritic path.
+  'executablePath': null # foodcritic path.
 ```
 Run `which foodcritic` to find the path
 
 #### foodcriticExtraArgs
 ```
 'linter-foodcritic':
-  'foodcriticExtraArgs': "" # additional arguments to foodcritic
+  'extraArgs': "" # additional arguments to foodcritic
 ```
 
 ## Contributing
@@ -61,4 +61,4 @@ Please note that modifications should follow these coding guidelines:
 Thank you for helping out!
 
 ## Donation
-[![Share the love!]()
+[![PayPayl donate button](https://img.shields.io/badge/paypal-donate-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LY6KCLJ6EFTDL&lc=EE&item_name=opensource&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted "Donate once-off to this project using Paypal")
