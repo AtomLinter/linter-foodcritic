@@ -1,13 +1,22 @@
 {
   "name": "linter-foodcritic",
-  "linter-package": true,
-  "main": "./lib/init",
-  "version": "0.3.10",
+  "main": "./lib/main",
+  "version": "0.4.0",
   "description": "Lint `Foodcritic` on the fly, using foodcritic",
   "repository": "https://github.com/AtomLinter/linter-foodcritic.git",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "atom-linter": "^3.0.1",
+    "xregexp": "^2.0.0"
+  },
+  "providedServices": {
+	  "linter": {
+  		"versions": {
+  		  "1.0.0": "provideLinter"
+  		}
+	  }
+ }
 }
