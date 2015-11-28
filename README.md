@@ -1,64 +1,31 @@
 linter-foodcritic
 =========================
 
-This linter plugin for [Linter](https://github.com/AtomLinter/Linter) provides an interface to [foodcritic](https://github.com/AtomLinter/linter-foodcritic). It will be used with files that have the “Ruby” syntax.
+This linter plugin for [Linter](https://github.com/atom-community/linter)
+provides an interface to [foodcritic](http://www.foodcritic.io/). It will be
+used with files that have the
+["Chef" syntax](https://atom.io/packages/language-chef).
 
 ## Installation
-Linter package must be installed in order to use this plugin. If Linter is not installed, please follow the instructions [here](https://github.com/AtomLinter/Linter).
+Linter package must be installed in order to use this plugin. If Linter is not
+installed, please follow the instructions
+[here](https://github.com/AtomLinter/Linter).
 
 ### foodcritic installation
-Before using this plugin, you must ensure that `foodcritic` is installed on your system. To install `foodcritic`, do the following:
+Before using this plugin, you must ensure that `foodcritic` is installed on
+your system. To install `foodcritic`, do the following:
 
 1. Install [ruby](https://www.ruby-lang.org/).
 
-2. Install [foodcritic](http://acrmp.github.io/foodcritic/) by typing the following in a terminal:
-   ```
+2. Install [foodcritic](http://www.foodcritic.io/) by typing the following in a terminal:
+   ```ShellSession
    gem install foodcritic
    ```
-3. Alternatively install ChefDK which already includes foodcritic:
-   ```
-   https://downloads.getchef.com/chef-dk/
-   ```
+3. Alternatively install ChefDK which already includes foodcritic: https://downloads.chef.io/chef-dk/
 
-Now you can proceed to install the linter-foodcritic plugin.
+Now you can proceed to install the `linter-foodcritic` plugin.
 
 ### Plugin installation
-```
+```ShellSession
 $ apm install linter-foodcritic
 ```
-
-## Settings
-You can configure linter-foodcritic by editing ~/.atom/config.cson (choose Open Your Config in Atom menu):
-
-#### foodcriticExecutablePath
-```
-'linter-foodcritic':
-  'executablePath': null # foodcritic path.
-```
-Run `which foodcritic` to find the path
-
-#### foodcriticExtraArgs
-```
-'linter-foodcritic':
-  'extraArgs': "" # additional arguments to foodcritic
-```
-
-## Contributing
-If you would like to contribute enhancements or fixes, please do the following:
-
-1. Fork the plugin repository.
-1. Hack on a separate topic branch created from the latest `master`.
-1. Commit and push the topic branch.
-1. Make a pull request.
-1. welcome to the club
-
-Please note that modifications should follow these coding guidelines:
-
-- Indent is 2 spaces.
-- Code should pass coffeelint linter.
-- Vertical whitespace helps readability, don’t be afraid to use it.
-
-Thank you for helping out!
-
-## Donation
-[![PayPayl donate button](https://img.shields.io/badge/paypal-donate-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LY6KCLJ6EFTDL&lc=EE&item_name=opensource&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted "Donate once-off to this project using Paypal")
