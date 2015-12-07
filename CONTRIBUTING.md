@@ -1,4 +1,4 @@
-## Contributing
+# Contributing
 If you would like to contribute enhancements or fixes, please do the following:
 
 0. Fork the plugin repository.
