@@ -33,7 +33,7 @@ module.exports =
           currentFilePath = textEditor.getPath()
           fileDir = pathModule.dirname(currentFilePath)
           cwd = pathModule.dirname(helpers.findFile(fileDir, 'metadata.rb'))
-          if cwd == '.'
+          if cwd is '.'
             resolve []
           currentFileRelPath = pathModule.relative(cwd, currentFilePath)
           # change filePath to be relative to @cwd
@@ -60,7 +60,7 @@ module.exports =
               XRegExp.forEach fOutput, @MessageRegexp, (match, i) ->
                 match.line ?= 0
                 normFilePath = pathModule.normalize(match.filePath)
-                if normFilePath == currentFileRelPath
+                if normFilePath is currentFileRelPath
                   msg = {
                     type: 'Error',
                     text: match.text,
@@ -71,7 +71,7 @@ module.exports =
               , this
               resolve messages
 
-          process.onWillThrowError ({error,handle}) ->
+          process.onWillThrowError ({error, handle}) ->
             atom.notifications.addError "Failed to run #{@executablePath}",
               detail: "#{error.message}"
               dismissable: true
