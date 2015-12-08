@@ -15,10 +15,10 @@ module.exports =
   activate: ->
     @subscriptions = new CompositeDisposable
     @MessageRegexp = null
-    @subscriptions.add atom.config.observe 'foodcritic.executablePath', =>
-      @executablePath = atom.config.get 'linter-foodcritic.executablePath'
-    @subscriptions.add atom.config.observe 'foodcritic.extraArgs', =>
-      @extraArgs = atom.config.get 'linter-foodcritic.extraArgs'
+    @subscriptions.add atom.config.observe 'linter-foodcritic.executablePath', (executablePath) =>
+      @executablePath = executablePath
+    @subscriptions.add atom.config.observe 'linter-foodcritic.extraArgs', (extraArgs) =>
+      @extraArgs = extraArgs
 
   deactivate: ->
     @subscriptions.dispose()
