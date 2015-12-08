@@ -11,14 +11,21 @@ module.exports =
     extraArgs:
       type: 'string'
       default: ''
+    lintOnFly:
+      type: 'boolean'
+      default: true
 
   activate: ->
     @subscriptions = new CompositeDisposable
     @MessageRegexp = null
+    @subscriptions.add atom.config.observe 'linter-foodcritic.executablePath', =>
+      @executablePath = atom.config.get 'linter-foodcritic.executablePath'
+    @subscriptions.add atom.config.observe 'linter-foodcritic.extraArgs', =>
+      @extraArgs = atom.config.get 'linter-foodcritic.extraArgs'
     @subscriptions.add atom.config.observe 'foodcritic.executablePath', =>
       @executablePath = atom.config.get 'linter-foodcritic.executablePath'
-    @subscriptions.add atom.config.observe 'foodcritic.extraArgs', =>
-      @extraArgs = atom.config.get 'linter-foodcritic.extraArgs'
+    @subscriptions.add atom.config.observe 'linter-foodcritic.lintOnFly', =>
+      @lintOnFly = atom.config.get 'linter-foodcritic.lintOnFly'
 
   deactivate: ->
     @subscriptions.dispose()
@@ -27,7 +34,7 @@ module.exports =
     provider =
       grammarScopes: ['source.ruby.chef']
       scope: 'file'
-      lintOnFly: false
+      lintOnFly: @lintOnFly
       lint: (textEditor) =>
         return new Promise (resolve, reject) =>
           currentFilePath = textEditor.getPath()
