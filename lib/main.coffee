@@ -33,7 +33,7 @@ module.exports =
       lint: (textEditor) =>
         currentFilePath = textEditor.getPath()
         fileDir = pathModule.dirname(currentFilePath)
-        cwd = pathModule.dirname(helpers.findFile(fileDir, 'metadata.rb'))
+        cwd = pathModule.dirname(helpers.find(fileDir, 'metadata.rb'))
         if cwd is '.'
           atom.notifications.addWarning('[foodcritic] No metadata.rb found, not linting!', {dismissable: true})
           return Promise.resolve([])
