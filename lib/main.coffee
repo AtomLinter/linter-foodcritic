@@ -1,6 +1,5 @@
-{BufferedProcess, CompositeDisposable} = require 'atom'
+{CompositeDisposable} = require 'atom'
 pathModule = require 'path'
-XRegExp = require('xregexp').XRegExp
 helpers = require 'atom-linter'
 
 module.exports =
@@ -9,12 +8,14 @@ module.exports =
       type: 'string'
       default: 'foodcritic'
     extraArgs:
+      title: 'Extra Arguments'
+      description: 'Extra arguments to pass to foodcritic'
       type: 'string'
       default: ''
 
   activate: ->
     @subscriptions = new CompositeDisposable
-    @MessageRegexp = null
+    @MessageRegexp = /(FC\d{3}:\s.+):(?:.+):(\d+)/g
     @subscriptions.add atom.config.observe 'linter-foodcritic.executablePath', (executablePath) =>
       @executablePath = executablePath
     @subscriptions.add atom.config.observe 'linter-foodcritic.extraArgs', (extraArgs) =>
@@ -36,27 +37,20 @@ module.exports =
         if cwd is '.'
           atom.notifications.addWarning('[foodcritic] No metadata.rb found, not linting!', {dismissable: true})
           return Promise.resolve([])
-        currentFileRelPath = pathModule.relative(cwd, currentFilePath)
-        # change filePath to be relative to @cwd
-        filePath = currentFileRelPath.replace(/\\/g, '/').replace(/^\//, '')
-        regex = "(?<text>.+:\\s.+):\\s+(./)?(?<filePath>#{filePath}|[\\w+\\._]+):(?<line>\\d+)"
         if @extraArgs
           args = @extraArgs.split(' ').concat ['.']
         else
           args = ['.']
+        regex = @MessageRegexp
         helpers.exec(@executablePath, args, {cwd: cwd}).then (output) ->
           return [] unless output?
           messages = []
-          @MessageRegexp = XRegExp regex, ''
-          XRegExp.forEach output, @MessageRegexp, (match, i) ->
-            match.line ?= 0
-            normFilePath = pathModule.normalize(match.filePath)
-            if normFilePath is currentFileRelPath
-              msg = {
-                type: 'Error',
-                text: match.text,
-                filePath: currentFilePath,
-                range: helpers.rangeFromLineNumber(textEditor, match.line - 1)
-              }
-              messages.push msg if msg.range?
-          messages
+          while((match = regex.exec(output)) isnt null)
+            match.line = 1 if not match[2]? or match[2] < 1
+            messages.push {
+              type: 'Error',
+              text: match[1],
+              filePath: currentFilePath,
+              range: helpers.rangeFromLineNumber(textEditor, match[2] - 1)
+            }
+          return messages
