@@ -10,14 +10,15 @@ module.exports =
       default: 'foodcritic'
     extraArgs:
       type: 'string'
+      default: ''
 
   activate: ->
     @subscriptions = new CompositeDisposable
     @MessageRegexp = null
-    @subscriptions.add atom.config.observe 'foodcritic.executablePath', (executablePath) =>
-      @executablePath = executablePath
-    @subscriptions.add atom.config.observe 'foodcritic.extraArgs', (extraArgs) =>
-      @extraArgs = extraArgs
+    @subscriptions.add atom.config.observe 'foodcritic.executablePath', =>
+      @executablePath = atom.config.get 'linter-foodcritic.executablePath'
+    @subscriptions.add atom.config.observe 'foodcritic.extraArgs', =>
+      @extraArgs = atom.config.get 'linter-foodcritic.extraArgs'
 
   deactivate: ->
     @subscriptions.dispose()
@@ -46,7 +47,7 @@ module.exports =
         helpers.exec(@executablePath, args, {cwd: cwd}).then (output) ->
           return [] unless output?
           messages = []
-          @MessageRegexp ?= XRegExp regex, ''
+          @MessageRegexp = XRegExp regex, ''
           XRegExp.forEach output, @MessageRegexp, (match, i) ->
             match.line ?= 0
             normFilePath = pathModule.normalize(match.filePath)
