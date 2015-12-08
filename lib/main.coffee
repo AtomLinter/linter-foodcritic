@@ -46,7 +46,7 @@ module.exports =
           return [] unless output?
           messages = []
           while((match = regex.exec(output)) isnt null)
-            match.line = 1 if not match[2]? or match[2] < 1
+            match.line = 1 if typeof match[2] is 'undefined' or match[2] < 1
             messages.push {
               type: 'Error',
               text: match[1],
