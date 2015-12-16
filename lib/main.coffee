@@ -38,9 +38,9 @@ module.exports =
           atom.notifications.addWarning('[foodcritic] No metadata.rb found, not linting!', {dismissable: true})
           return Promise.resolve([])
         if @extraArgs
-          args = @extraArgs.split(' ').concat ['.']
+          args = @extraArgs.split(' ').concat [currentFilePath]
         else
-          args = ['.']
+          args = [currentFilePath]
         regex = @MessageRegexp
         helpers.exec(@executablePath, args, {cwd: cwd}).then (output) ->
           return [] unless output?
