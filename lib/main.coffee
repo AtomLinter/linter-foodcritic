@@ -46,11 +46,12 @@ module.exports =
           return [] unless output?
           messages = []
           while((match = regex.exec(output)) isnt null)
-            match.line = 1 if typeof match[2] is 'undefined' or match[2] < 1
-            messages.push {
-              type: 'Error',
-              text: match[1],
-              filePath: currentFilePath,
-              range: helpers.rangeFromLineNumber(textEditor, match[2] - 1)
-            }
+            if match[0].match(currentFilePath)
+              match.line = 1 if typeof match[2] is 'undefined' or match[2] < 1
+              messages.push {
+                type: 'Error',
+                text: match[1],
+                filePath: currentFilePath,
+                range: helpers.rangeFromLineNumber(textEditor, match[2] - 1)
+              }
           return messages
