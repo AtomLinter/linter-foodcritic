@@ -28,7 +28,7 @@ module.exports =
     provider =
       name: 'foodcritic'
       grammarScopes: ['source.ruby.chef']
-      scope: 'file'
+      scope: 'project'
       lintOnFly: false
       lint: (textEditor) =>
         currentFilePath = textEditor.getPath()
@@ -46,12 +46,11 @@ module.exports =
           return [] unless output?
           messages = []
           while((match = regex.exec(output)) isnt null)
-            if match[0].match(currentFilePath)
-              match.line = 1 if typeof match[2] is 'undefined' or match[2] < 1
-              messages.push {
-                type: 'Error',
-                text: match[1],
-                filePath: currentFilePath,
-                range: helpers.rangeFromLineNumber(textEditor, match[2] - 1)
-              }
+            match.line = 1 if typeof match[2] is 'undefined' or match[2] < 1
+            messages.push {
+              type: 'Error',
+              text: match[1],
+              filePath: match[0],
+              range: helpers.rangeFromLineNumber(textEditor, match[2] - 1)
+            }
           return messages
