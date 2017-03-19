@@ -51,6 +51,6 @@ module.exports =
               type: 'Error',
               text: match[1],
               filePath: currentFilePath,
-              range: helpers.rangeFromLineNumber(textEditor, match[2] - 1)
+              range: helpers.generateRange(textEditor, match[2] - 1)
             }
           return messages
