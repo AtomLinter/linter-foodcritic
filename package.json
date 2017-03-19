@@ -1,7 +1,7 @@
 {
   "name": "linter-foodcritic",
   "main": "./lib/main",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Lint `Foodcritic` on the fly, using foodcritic",
   "repository": "https://github.com/AtomLinter/linter-foodcritic.git",
   "license": "MIT",

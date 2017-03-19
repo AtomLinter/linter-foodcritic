@@ -1,5 +1,19 @@
 # Change Log
 
+## [v0.5.3](https://github.com/AtomLinter/linter-foodcritic/tree/v0.5.3) (2017-03-18)
+[Full Changelog](https://github.com/AtomLinter/linter-foodcritic/compare/v0.5.2...v0.5.3)
+
+**Implemented enhancements:**
+
+- Update atom-linter to the latest version 🚀 [\#40](https://github.com/AtomLinter/linter-foodcritic/pull/40) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Update atom-linter to version 8.0.0 🚀 [\#39](https://github.com/AtomLinter/linter-foodcritic/pull/39) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- atom-linter@4.6.1 untested ⚠️ [\#31](https://github.com/AtomLinter/linter-foodcritic/pull/31) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- atom-linter@4.5.0 untested ⚠️ [\#28](https://github.com/AtomLinter/linter-foodcritic/pull/28) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- atom-linter@4.4.0 untested ⚠️ [\#27](https://github.com/AtomLinter/linter-foodcritic/pull/27) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- atom-linter@4.3.4 untested ⚠️ [\#25](https://github.com/AtomLinter/linter-foodcritic/pull/25) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- atom-linter@4.3.1 untested ⚠️ [\#21](https://github.com/AtomLinter/linter-foodcritic/pull/21) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- atom-linter@4.3.0 untested ⚠️ [\#20](https://github.com/AtomLinter/linter-foodcritic/pull/20) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
 ## [v0.5.2](https://github.com/AtomLinter/linter-foodcritic/tree/v0.5.2) (2015-12-30)
 [Full Changelog](https://github.com/AtomLinter/linter-foodcritic/compare/v0.5.1...v0.5.2)
 
