@@ -1,44 +1,44 @@
 # Change Log
 
-## [0.5.2](https://github.com/AtomLinter/linter-foodcritic/tree/0.5.2) (2015-12-30)
-[Full Changelog](https://github.com/AtomLinter/linter-foodcritic/compare/v0.5.1...0.5.2)
+## [v0.5.2](https://github.com/AtomLinter/linter-foodcritic/tree/v0.5.2) (2015-12-30)
+[Full Changelog](https://github.com/AtomLinter/linter-foodcritic/compare/v0.5.1...v0.5.2)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - atom-linter@4.2.0 untested ⚠️ [\#19](https://github.com/AtomLinter/linter-foodcritic/pull/19) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
 
 ## [v0.5.1](https://github.com/AtomLinter/linter-foodcritic/tree/v0.5.1) (2015-12-16)
 [Full Changelog](https://github.com/AtomLinter/linter-foodcritic/compare/v0.5.0...v0.5.1)
 
-**Closed issues:**
+**Implemented enhancements:**
+
+- atom-linter@4.1.1 untested ⚠️ [\#16](https://github.com/AtomLinter/linter-foodcritic/pull/16) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
+**Fixed bugs:**
 
 - Lot of errors showing up in atom [\#17](https://github.com/AtomLinter/linter-foodcritic/issues/17)
-
-**Merged pull requests:**
-
 - Only run foodcritic on the current file [\#18](https://github.com/AtomLinter/linter-foodcritic/pull/18) ([ndobson](https://github.com/ndobson))
-- atom-linter@4.1.1 untested ⚠️ [\#16](https://github.com/AtomLinter/linter-foodcritic/pull/16) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
 
 ## [v0.5.0](https://github.com/AtomLinter/linter-foodcritic/tree/v0.5.0) (2015-12-08)
 [Full Changelog](https://github.com/AtomLinter/linter-foodcritic/compare/v0.4.0...v0.5.0)
 
-**Closed issues:**
+**Implemented enhancements:**
+
+- Use helpers.exec to run foodcritic [\#12](https://github.com/AtomLinter/linter-foodcritic/pull/12) ([Arcanemagus](https://github.com/Arcanemagus))
+
+**Fixed bugs:**
 
 - foodcritic runs once, then never again [\#11](https://github.com/AtomLinter/linter-foodcritic/issues/11)
 - unable to get this working on El Capitan \( mac osX \) [\#8](https://github.com/AtomLinter/linter-foodcritic/issues/8)
 - linter-foodcritic fails if extra params is empty [\#7](https://github.com/AtomLinter/linter-foodcritic/issues/7)
 - Upcoming linter changes [\#6](https://github.com/AtomLinter/linter-foodcritic/issues/6)
-
-**Merged pull requests:**
-
-- Use helpers.exec to run foodcritic [\#12](https://github.com/AtomLinter/linter-foodcritic/pull/12) ([Arcanemagus](https://github.com/Arcanemagus))
 - Update the README [\#10](https://github.com/AtomLinter/linter-foodcritic/pull/10) ([Arcanemagus](https://github.com/Arcanemagus))
 - Update the README [\#9](https://github.com/AtomLinter/linter-foodcritic/pull/9) ([Arcanemagus](https://github.com/Arcanemagus))
 
 ## [v0.4.0](https://github.com/AtomLinter/linter-foodcritic/tree/v0.4.0) (2015-08-07)
 [Full Changelog](https://github.com/AtomLinter/linter-foodcritic/compare/v0.3.10...v0.4.0)
 
-**Closed issues:**
+**Fixed bugs:**
 
 - Finds lint problems in my Gemfile... [\#3](https://github.com/AtomLinter/linter-foodcritic/issues/3)
 - Uncaught TypeError: Cannot read property 'replace' of undefined [\#2](https://github.com/AtomLinter/linter-foodcritic/issues/2)
@@ -46,7 +46,7 @@
 ## [v0.3.10](https://github.com/AtomLinter/linter-foodcritic/tree/v0.3.10) (2015-06-06)
 [Full Changelog](https://github.com/AtomLinter/linter-foodcritic/compare/v0.3.9...v0.3.10)
 
-**Closed issues:**
+**Fixed bugs:**
 
 - Package.getActivationCommands is deprecated. [\#5](https://github.com/AtomLinter/linter-foodcritic/issues/5)
 
@@ -56,14 +56,14 @@
 ## [v0.3.8](https://github.com/AtomLinter/linter-foodcritic/tree/v0.3.8) (2015-05-28)
 [Full Changelog](https://github.com/AtomLinter/linter-foodcritic/compare/v0.3.7...v0.3.8)
 
-**Closed issues:**
+**Fixed bugs:**
 
 - Package.activateConfig is deprecated. [\#4](https://github.com/AtomLinter/linter-foodcritic/issues/4)
 
 ## [v0.3.7](https://github.com/AtomLinter/linter-foodcritic/tree/v0.3.7) (2015-02-17)
 [Full Changelog](https://github.com/AtomLinter/linter-foodcritic/compare/v0.3.5...v0.3.7)
 
-**Closed issues:**
+**Fixed bugs:**
 
 - Uncaught TypeError: Cannot read property 'getPath' of undefined [\#1](https://github.com/AtomLinter/linter-foodcritic/issues/1)
 
