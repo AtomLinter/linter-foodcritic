@@ -1,6 +1,14 @@
 # Change Log
 
-## [v0.5.3](https://github.com/AtomLinter/linter-foodcritic/tree/v0.5.3) (2017-03-18)
+## [0.5.4](https://github.com/AtomLinter/linter-foodcritic/tree/0.5.4) (2017-03-29)
+[Full Changelog](https://github.com/AtomLinter/linter-foodcritic/compare/v0.5.3...0.5.4)
+
+**Fixed bugs:**
+
+- Errors in console rather than in linter-panel [\#42](https://github.com/AtomLinter/linter-foodcritic/issues/42)
+- Ignore the process exit code [\#43](https://github.com/AtomLinter/linter-foodcritic/pull/43) ([Arcanemagus](https://github.com/Arcanemagus))
+
+## [v0.5.3](https://github.com/AtomLinter/linter-foodcritic/tree/v0.5.3) (2017-03-19)
 [Full Changelog](https://github.com/AtomLinter/linter-foodcritic/compare/v0.5.2...v0.5.3)
 
 **Implemented enhancements:**
