@@ -42,7 +42,7 @@ module.exports =
         else
           args = [currentFilePath]
         regex = @MessageRegexp
-        helpers.exec(@executablePath, args, {cwd: cwd}).then (output) ->
+        helpers.exec(@executablePath, args, {cwd: cwd, ignoreExitCode: true}).then (output) ->
           return [] unless output?
           messages = []
           while((match = regex.exec(output)) isnt null)
