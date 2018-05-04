@@ -27,7 +27,11 @@ module.exports =
   provideLinter: ->
     provider =
       name: 'foodcritic'
-      grammarScopes: ['source.ruby.chef']
+      grammarScopes: [
+        'source.ruby.chef',
+        'source.chef.recipes',
+        'source.chef.metadata'
+      ]
       scope: 'file'
       lintOnFly: false
       lint: (textEditor) =>
