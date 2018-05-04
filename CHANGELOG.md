@@ -1,5 +1,17 @@
 # Change Log
 
+## [v0.6.0](https://github.com/AtomLinter/linter-foodcritic/tree/v0.6.0) (2018-05-04)
+
+[Full Changelog](https://github.com/AtomLinter/linter-foodcritic/compare/v0.5.4...v0.6.0)
+
+**Implemented enhancements:**
+
+- Update atom-linter to version 10.0.0 🚀 [\#44](https://github.com/AtomLinter/linter-foodcritic/pull/44) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+
+**Merged pull requests:**
+
+- Support language-chef v2 [\#49](https://github.com/AtomLinter/linter-foodcritic/pull/49) ([krzkowalczyk](https://github.com/krzkowalczyk))
+
 ## [v0.5.4](https://github.com/AtomLinter/linter-foodcritic/tree/v0.5.4) (2017-03-29)
 
 [Full Changelog](https://github.com/AtomLinter/linter-foodcritic/compare/v0.5.3...v0.5.4)
