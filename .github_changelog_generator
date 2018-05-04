@@ -1,0 +1,5 @@
+user=AtomLinter
+project=linter-foodcritic
+unreleased=true
+future-release=v0.6.0
+exclude_labels=duplicate,question,invalid,wontfix,Duplicate,Question,Invalid,Wontfix,External
