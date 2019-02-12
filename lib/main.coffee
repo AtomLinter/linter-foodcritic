@@ -33,28 +33,31 @@ module.exports =
         'source.chef.metadata'
       ]
       scope: 'file'
-      lintOnFly: false
+      lintsOnChange: false
       lint: (textEditor) =>
         currentFilePath = textEditor.getPath()
         fileDir = pathModule.dirname(currentFilePath)
         cwd = pathModule.dirname(helpers.find(fileDir, 'metadata.rb'))
         if cwd is '.'
-          atom.notifications.addWarning('[foodcritic] No metadata.rb found, not linting!', {dismissable: true})
+          atom.notifications.addWarning('[foodcritic] No metadata.rb found, not linting!', { dismissable: true })
           return Promise.resolve([])
         if @extraArgs
           args = @extraArgs.split(' ').concat [currentFilePath]
         else
           args = [currentFilePath]
         regex = @MessageRegexp
-        helpers.exec(@executablePath, args, {cwd: cwd, ignoreExitCode: true}).then (output) ->
+        helpers.exec(@executablePath, args, { cwd: cwd, ignoreExitCode: true }).then (output) ->
           return [] unless output?
           messages = []
           while((match = regex.exec(output)) isnt null)
             match.line = 1 if typeof match[2] is 'undefined' or match[2] < 1
             messages.push {
-              type: 'Error',
+              severity: 'error',
               text: match[1],
-              filePath: currentFilePath,
-              range: helpers.generateRange(textEditor, match[2] - 1)
+              excerpt: currentFilePath,
+              location: {
+                file: currentFilePath,
+                position: helpers.generateRange(textEditor, match[2] - 1),
+              }
             }
           return messages
