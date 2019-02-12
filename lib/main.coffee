@@ -53,8 +53,7 @@ module.exports =
             match.line = 1 if typeof match[2] is 'undefined' or match[2] < 1
             messages.push {
               severity: 'error',
-              text: match[1],
-              excerpt: currentFilePath,
+              excerpt: match[1],
               location: {
                 file: currentFilePath,
                 position: helpers.generateRange(textEditor, match[2] - 1),
