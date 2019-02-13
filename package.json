@@ -6,15 +6,18 @@
   "repository": "https://github.com/AtomLinter/linter-foodcritic.git",
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">0.50.0 <2.0.0"
   },
   "dependencies": {
     "atom-linter": "^10.0.0"
   },
+  "package-deps": [
+    "linter:2.0.0"
+  ],
   "providedServices": {
     "linter": {
       "versions": {
-        "1.0.0": "provideLinter"
+        "2.0.0": "provideLinter"
       }
     }
   },
